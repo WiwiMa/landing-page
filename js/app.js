@@ -35,6 +35,30 @@
 
 // build the nav
 
+// loop nav
+const ulNav = document.querySelector('ul');
+const sections = document.querySelectorAll('section');
+
+function createNavItem () {
+    // loop with "for...of" because sections is a node list and NOT an array
+    // for (let i = 0;...) will NOT work!
+    for (const section of sections) {
+        let sectionId = section.getAttribute('id');
+        let sectionDataNav = section.getAttribute('data-nav');
+
+        // seems this needs to be created within loop in order not to be overwritten again after
+        const liElement = document.createElement('li');
+
+        // seems this needs to be created within loop in order not to be overwritten again after
+        const aElement = document.createElement('a');
+        aElement.classList.add('menu__link');
+        
+        aElement.setAttribute('href', sectionId);
+        aElement.textContent = sectionDataNav;
+        liElement.appendChild(aElement);
+        ulNav.appendChild(liElement);
+    }
+}
 
 // Add class 'active' to section when near top of viewport
 
