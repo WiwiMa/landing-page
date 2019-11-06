@@ -53,7 +53,7 @@ function createNavItem () {
         const aElement = document.createElement('a');
         aElement.classList.add('menu__link');
         
-        aElement.setAttribute('href', sectionId);
+        aElement.setAttribute('href', '#' + sectionId);
         aElement.textContent = sectionDataNav;
         liElement.appendChild(aElement);
         ulNav.appendChild(liElement);
