@@ -26,6 +26,8 @@ function createNavItem () {
     }
 }
 
+createNavItem();
+
 
 // Hide nav when scrolling down, show when scrolling up
 
