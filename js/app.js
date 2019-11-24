@@ -35,10 +35,8 @@ window.onscroll = function () {
     var currentOffset = window.pageYOffset;
     if (initialOffset > currentOffset) {
         document.querySelector('.page__header').classList.remove('navbar__scroll');
-        console.log('up');
     } else {
         document.querySelector('.page__header').classList.add('navbar__scroll');
-        console.log('down');
     }
     initialOffset = currentOffset;
 };
