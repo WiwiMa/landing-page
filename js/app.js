@@ -28,7 +28,7 @@ function createNavItem () {
 
 createNavItem();
 
-
+/*
 // Hide nav when scrolling down, show when scrolling up
 
 var initialOffset = window.pageYOffset;
@@ -43,6 +43,7 @@ window.onscroll = function () {
     initialOffset = currentOffset;
 };
 
+// Display active section in nav
 var halfWay = window.innerHeight / 2;
 
 window.onscroll = function () {
@@ -59,3 +60,29 @@ window.onscroll = function () {
         }
     }
 }
+*/
+
+var initialOffset = window.pageYOffset;
+var halfWay = window.innerHeight / 2;
+
+window.onscroll = function () {
+    var currentOffset = window.pageYOffset;
+    if (initialOffset > currentOffset) {
+        document.querySelector('.page__header').classList.remove('navbar__scroll');
+    } else {
+        document.querySelector('.page__header').classList.add('navbar__scroll');
+    }
+    initialOffset = currentOffset;
+    for (const sec of sections) {
+        if (sec.getBoundingClientRect().top < halfWay && sec.getBoundingClientRect().top >= 0) {
+            var prevActNavItem = document.querySelector('.menu__link.active');
+            if (!prevActNavItem) {} else {
+                prevActNavItem.classList.remove('active');
+                };
+            var activeSectionId = sec.getAttribute('id');
+            console.log(activeSectionId);
+            var activeNavItem = document.querySelector('.menu__link.' + activeSectionId);
+            activeNavItem.classList.add('active');
+        }
+    }
+};
