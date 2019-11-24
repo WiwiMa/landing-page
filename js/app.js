@@ -1,47 +1,12 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
+/* Building the Nav */
 
-/**
- * Define Global Variables
- * 
-*/
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
-// loop nav
+// Loop nav
 const ulNav = document.querySelector('ul');
 const sections = document.querySelectorAll('section');
 
 function createNavItem () {
-    // loop with "for...of" because sections is a node list and NOT an array
-    // for (let i = 0;...) will NOT work!
+    /* Loop with "for...of" because sections is a node list and NOT an array
+    for (let i = 0;...) will NOT work! */
     for (const section of sections) {
         let sectionId = section.getAttribute('id');
         let sectionDataNav = section.getAttribute('data-nav');
@@ -60,22 +25,19 @@ function createNavItem () {
     }
 }
 
-// Add class 'active' to section when near top of viewport
 
+// Hide nav when scrolling down, show when scrolling up
 
-// Scroll to anchor ID using scrollTO event
+var initialOffset = window.pageYOffset;
 
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
+window.onscroll = function () {
+    var currentOffset = window.pageYOffset;
+    if (initialOffset > currentOffset) {
+        document.querySelector('.page__header').classList.remove('navbar__scroll');
+        console.log('up');
+    } else {
+        document.querySelector('.page__header').classList.add('navbar__scroll');
+        console.log('down');
+    }
+    initialOffset = currentOffset;
+};
