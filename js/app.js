@@ -42,3 +42,20 @@ window.onscroll = function () {
     }
     initialOffset = currentOffset;
 };
+
+var halfWay = window.innerHeight / 2;
+
+window.onscroll = function () {
+    for (const sec of sections) {
+        if (sec.getBoundingClientRect().top < halfWay && sec.getBoundingClientRect().top >= 0) {
+            var prevActNavItem = document.querySelector('.menu__link.active');
+            if (!prevActNavItem) {} else {
+                prevActNavItem.classList.remove('active');
+                };
+            var activeSectionId = sec.getAttribute('id');
+            console.log(activeSectionId);
+            var activeNavItem = document.querySelector('.menu__link.' + activeSectionId);
+            activeNavItem.classList.add('active');
+        }
+    }
+}
