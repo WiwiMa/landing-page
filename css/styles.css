@@ -138,20 +138,19 @@ section {
     }
     
     .menu__open.hide {
-        visibility: hidden;
+        display: none;
     }
     
     .menu__close.hide {
-        visibility: hidden;
+        display: none;
     }
     
     .navbar__menu {
         padding: 20px auto auto 50px;
-        visibility: hidden;
     }
     
-    .navbar__menu.show {
-        visibility: visible;
+    .navbar__menu.hide {
+        display: none;
     }
     
     .navbar__menu ul {
@@ -187,8 +186,6 @@ section {
     .burger__menu {
         display: 
     }
-    
-    
 }
 
 
