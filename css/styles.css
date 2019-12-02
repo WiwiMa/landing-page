@@ -113,10 +113,40 @@ section {
     border-radius: 20px;
 }   
 
+@media (min-width: 601px) {
+    .mob__menu {
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .page__header {
         width: auto;
         background: rgba(255, 255, 255, 0) !important;
+    }
+    
+    .mob__menu {
+        position: fixed;
+        right: 1em;
+        top: 1em;
+        justify-content: right;
+        z-index: 20;
+    }
+    
+    .menu__open {
+        fill: #fff;
+    }
+    
+    .menu__open.hide {
+        display: none;
+    }
+    
+    .menu__close.hide {
+        display: none;
+    }
+    
+    .navbar__menu.hide {
+        display: none;
     }
     
     .navbar__menu {
@@ -132,6 +162,13 @@ section {
         flex-direction: column;
         justify-content: start;
         float: right;        
+    }
+    
+    .navbar__menu ul .close {
+        background-image: url('media/close.svg');
+        background-size: cover;
+        width: 10px;
+        height: 10px;
     }
     
     .navbar__menu li {
