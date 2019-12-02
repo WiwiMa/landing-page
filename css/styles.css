@@ -145,17 +145,13 @@ section {
         display: none;
     }
     
-    .navbar__menu {
-        padding: 20px auto auto 50px;
-    }
-    
     .navbar__menu.hide {
         display: none;
     }
     
     .navbar__menu ul {
         margin-top: 0;
-        padding: 20px auto auto 50px;
+        padding-top: 3em;
         background-color: #fff;
         width: auto;
         height: 100vh;
