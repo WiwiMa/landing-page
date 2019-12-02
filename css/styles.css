@@ -64,6 +64,10 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.page__header {
+    transition: 0.5s;
+}
+
 .navbar__menu ul {
     text-align: center;
     display: flex;
@@ -114,6 +118,10 @@ section {
 }   
 
 @media (min-width: 601px) {
+    .page__header.navbar__scroll {
+        display: none;
+    }
+    
     .mob__menu {
         display: none;
     }
