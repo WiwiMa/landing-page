@@ -138,19 +138,20 @@ section {
     }
     
     .menu__open.hide {
-        display: none;
+        visibility: hidden;
     }
     
     .menu__close.hide {
-        display: none;
-    }
-    
-    .navbar__menu.hide {
-        display: none;
+        visibility: hidden;
     }
     
     .navbar__menu {
         padding: 20px auto auto 50px;
+        visibility: hidden;
+    }
+    
+    .navbar__menu.show {
+        visibility: visible;
     }
     
     .navbar__menu ul {
