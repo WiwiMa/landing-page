@@ -86,3 +86,34 @@ window.onscroll = function () {
         }
     }
 };
+
+
+/* Interactivity of Mobile Menu */
+
+const mobMenuOpener = document.querySelector('.menu__open');
+const mobMenuCloser = document.querySelector('.menu__close');
+
+mobMenuOpener.addEventListener('click', function openMobMenu () {
+document.querySelector('.navbar__menu').classList.remove('hide');
+})
+
+mobMenuOpener.addEventListener('click', function openMobMenu() {
+document.querySelector('.navbar__menu').classList.remove('hide');
+mobMenuCloser.classList.remove('hide');
+mobMenuOpener.classList.add('hide');
+})
+
+mobMenuCloser.addEventListener('click', function closeMobMenu() {
+document.querySelector('.navbar__menu').classList.add('hide');
+mobMenuCloser.classList.add('hide');
+mobMenuOpener.classList.remove('hide');
+});
+
+const allMenuSections = document.querySelectorAll('.navbar__menu ul li');
+for (oneMenuSection of allMenuSections) {
+oneMenuSection.addEventListener('click', function closeMobMenu(){
+document.querySelector('.navbar__menu').classList.add('hide');
+mobMenuCloser.classList.add('hide');
+mobMenuOpener.classList.remove('hide');
+});
+}
