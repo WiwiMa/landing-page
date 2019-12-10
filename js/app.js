@@ -17,6 +17,7 @@ function createNavItem () {
         // seems this needs to be created within loop in order not to be overwritten again after
         const aElement = document.createElement('a');
         aElement.classList.add('menu__link');
+        aElement.classList.add(sectionId);
         
         aElement.setAttribute('href', '#' + sectionId);
         aElement.textContent = sectionDataNav;
