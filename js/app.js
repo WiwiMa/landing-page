@@ -156,6 +156,8 @@ function createAddNavItem () {
     document.querySelector('#navbar__list').appendChild(newLiElement);
 }
 
+createAddSection();
+createAddNavItem();
 
 /* Re-organise active sections */
 
