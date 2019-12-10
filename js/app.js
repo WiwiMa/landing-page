@@ -105,6 +105,7 @@ createAddNavItem();
 
 var initialOffset = window.pageYOffset;
 var halfWay = window.innerHeight / 2;
+const incNewSections = document.querySelectorAll('section');
 
 window.onscroll = function () {
 	document.querySelector('.page__header').classList.remove('navbar__scroll');
@@ -112,7 +113,7 @@ window.onscroll = function () {
 		document.querySelector('.page__header').classList.add('navbar__scroll');
 	}, 4000
 	);
-	for (const sec of sections) {
+	for (const sec of incNewSections) {
 		if (sec.getBoundingClientRect().top < halfWay && sec.getBoundingClientRect().top >= 0) {
             var prevActNavItem = document.querySelector('.menu__link.active');
             if (!prevActNavItem) {} else {
