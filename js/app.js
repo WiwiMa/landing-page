@@ -110,7 +110,7 @@ window.onscroll = function () {
 	document.querySelector('.page__header').classList.remove('navbar__scroll');
 	setTimeout(() => {
 		document.querySelector('.page__header').classList.add('navbar__scroll');
-	}, 2000
+	}, 4000
 	);
 	for (const sec of sections) {
 		if (sec.getBoundingClientRect().top < halfWay && sec.getBoundingClientRect().top >= 0) {
